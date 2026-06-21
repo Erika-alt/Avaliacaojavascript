@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.game-board{
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url(assets/imgs/Fundo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.tabelas{
+    background-color: #30162A;
+    text-align: left;
+    font-size: 34px;
+    color: rgb(185, 150, 33);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.zumbi{
+    position: absolute;
+    bottom: 0px;
+    width: 90px;
+    animation: zumbi-animations 1.5s infinite linear;
+}
+
+.alucard{
+    height: 200px;
+    width: 120px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.alucard.derrota{
+    width: 120px;
+    height: 200px;
+    margin-left: 50px;
+}
+
+.alucard.atacando{
+    width: 320px;
+    height: 280px;
+    bottom: -25px;
+}
+
+.jump{
+    animation: alucard-animation 500ms ease-out;
+}
+
+.morcego{
+    bottom: 75%;
+    width: 150px;
+    position: absolute;
+    animation: morcego 5s infinite linear;
+}
+
+.morcego2{
+    bottom: 75%;
+    width: 100px;
+    position: absolute;
+    animation: morcego 6.2s infinite linear;
+}
+
+.controles{
+    display: none;
+}
+
+.game-over{
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(65, 57, 57, 0.363)
+}
+
+.restart{
+    height: 75px;
+    width: 300px;
+    border-radius: 10px;
+    border-color: #30162A;
+    font-size: 20px;
+    background-color: #3b1332;
+    cursor: pointer;
+    font: Arial;
+    font-weight: bold;
+    color: rgb(185, 150, 33);
+}
+
+@keyframes zumbi-animations {
+    from{
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes alucard-animation{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 120px
+    }
+
+    50%{
+        bottom: 120px;
+    }
+
+    60%{
+        bottom: 120px
+    }
+
+    100%{
+        bottom: 0px
+    }
+}
+
+@keyframes morcego {
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100%
+    }
+}
+
+@media (max-width: 620px){
+
+    .tabelas{
+        font-size: 20px;
+    }
+    .alucard{
+        width: 80px;
+        height: 130px;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    @keyframes alucard-animation{
+        0% {
+            bottom: 0px;
+        }
+        35% {
+            bottom: 140px; 
+        }
+        65% {
+            bottom: 140px; 
+        }
+        100% {
+            bottom: 0px;
+        }
+    }
+
+    .alucard.derrota {
+        width: 80px;       
+        height: 130px;     
+        margin-left: 20px; 
+    }
+
+    .alucard.atacando {
+        width: 180px; 
+        height: 160px;
+        bottom: -60px;
+    }
+
+    .zumbi{
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        animation: zumbi-animations 1s infinite linear;
+    }
+
+    .morcego{
+        width: 100px;
+        bottom: 65%;
+    }
+
+    .morcego2{
+        width: 70px;
+        bottom: 65%;
+    }
+
+    .restart{
+        width: 80%;
+        max-width: 280px;
+        font-size: 18px;
+    }
+
+    .controles {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .botao_pulo{
+        height: 35px;
+        width: 100px;
+        border-radius: 10px;
+        border: none;
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+        background-color: #92155B; 
+        cursor: pointer;}
+
+    .botao_ataque{
+        height: 35px;
+        width: 100px;
+        border-radius: 10px;
+        border: none;
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+        background-color: #92155B; 
+        cursor: pointer;}
+
+    }
